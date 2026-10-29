@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173b2e">
+  <meta name="description" content="Thoughtful insurance guidance for businesses and individuals. Explore commercial insurance solutions with Jalali Insurance Services.">
+  <title>The Jalali Agency | Insurance, thoughtfully considered</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #173b2e;
+      --green-2: #244b3a;
+      --green-3: #345d49;
+      --cream: #f6f2e8;
+      --paper: #fffdf7;
+      --brass: #b99a5c;
+      --brass-light: #d6c18d;
+      --ink: #1d2c25;
+      --muted: #69746c;
+      --line: rgba(23,59,46,.16);
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+      --shadow: 0 22px 60px rgba(18, 43, 32, .12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--cream); color: var(--ink); font-family: var(--sans); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    .topline { background: var(--green); color: #f8f4e9; text-align: center; padding: 8px 18px; font-size: 11px; letter-spacing: .17em; text-transform: uppercase; }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(246,242,232,.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .nav { max-width: 1220px; margin: auto; padding: 16px 30px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 220px; }
+    .brand-mark { width: 43px; height: 43px; color: var(--brass); flex: 0 0 auto; object-fit: contain; }
+    .brand-name { font-family: var(--serif); font-size: 20px; line-height: 1.05; letter-spacing: .01em; color: var(--green); }
+    .brand-sub { font-size: 9px; text-transform: uppercase; letter-spacing: .22em; color: var(--muted); margin-top: 5px; }
+    .nav-links { display: flex; align-items: center; gap: 28px; font-size: 12px; color: #405247; }
+    .nav-links a:not(.nav-cta):hover { color: var(--brass); }
+    .nav-cta, .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 13px 19px; background: var(--green); color: var(--paper); border: 1px solid var(--green); letter-spacing: .08em; text-transform: uppercase; font-size: 10px; font-weight: 700; transition: .2s ease; cursor: pointer; }
+    .nav-cta:hover, .button:hover { background: var(--green-2); transform: translateY(-1px); }
+    .button.outline { background: transparent; color: var(--green); border-color: rgba(23,59,46,.35); }
+    .button.outline:hover { background: rgba(23,59,46,.06); }
+    .menu-toggle { display: none; border: 1px solid var(--line); color: var(--green); background: transparent; padding: 9px 12px; }
+    .hero { position: relative; overflow: hidden; background: var(--green); color: var(--cream); min-height: 620px; }
+    .hero:before { content: ""; position: absolute; width: 560px; height: 560px; border: 1px solid rgba(214,193,141,.22); border-radius: 50%; right: -70px; top: 30px; }
+    .hero:after { content: ""; position: absolute; width: 430px; height: 430px; border: 1px solid rgba(214,193,141,.17); border-radius: 50%; right: -5px; top: 95px; }
+    .hero-inner { max-width: 1220px; margin: auto; padding: 94px 30px 88px; display: grid; grid-template-columns: 1.12fr .88fr; align-items: center; gap: 65px; position: relative; z-index: 1; }
+    .eyebrow { display: flex; align-items: center; gap: 12px; text-transform: uppercase; letter-spacing: .22em; font-size: 10px; font-weight: 600; color: var(--brass-light); }
+    .eyebrow:before { content: ""; display: block; width: 34px; height: 1px; background: var(--brass); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { font-family: var(--serif); font-size: clamp(46px, 5.5vw, 76px); font-weight: 400; letter-spacing: -.035em; line-height: 1.08; margin: 22px 0 24px; max-width: 690px; }
+    h1 em { color: var(--brass-light); font-weight: 400; }
+    .hero-copy { max-width: 515px; font-size: 15px; line-height: 1.9; color: rgba(246,242,232,.76); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .hero .button { background: var(--brass-light); border-color: var(--brass-light); color: var(--green); }
+    .hero .button:hover { background: #e5d6ad; }
+    .hero .button.outline { color: var(--cream); background: transparent; border-color: rgba(246,242,232,.38); }
+    .hero .button.outline:hover { background: rgba(255,255,255,.06); }
+    .hero-note { margin-top: 35px; font-size: 10px; color: rgba(246,242,232,.58); letter-spacing: .06em; }
+    .hero-art { min-height: 390px; display: grid; place-items: center; position: relative; }
+    .crest { width: min(100%, 400px); aspect-ratio: .82; border: 1px solid rgba(214,193,141,.65); border-radius: 190px 190px 8px 8px; padding: 13px; position: relative; transform: rotate(2deg); }
+    .crest-inner { width: 100%; height: 100%; border: 1px solid rgba(214,193,141,.3); border-radius: 180px 180px 3px 3px; display: flex; align-items: center; justify-content: center; flex-direction: column; position: relative; overflow: hidden; background: radial-gradient(ellipse at 50% 35%, rgba(63,101,76,.7), rgba(23,59,46,.2) 62%); }
+    .crest-inner:before, .crest-inner:after { content: ""; position: absolute; height: 75%; width: 1px; background: linear-gradient(transparent, rgba(214,193,141,.35), transparent); top: 13%; }
+    .crest-inner:before { left: 22%; transform: rotate(-14deg); }
+    .crest-inner:after { right: 22%; transform: rotate(14deg); }
+    .crest-sprig { width: 165px; max-width: 58%; height: 180px; object-fit: contain; margin-bottom: 16px; }
+    .crest-title { font-family: var(--serif); font-size: clamp(30px, 3vw, 43px); line-height: 1.1; letter-spacing: .02em; text-align: center; }
+    .crest-caption { margin-top: 14px; font-size: 9px; letter-spacing: .27em; text-transform: uppercase; color: var(--brass-light); }
+    .art-caption { position: absolute; bottom: 0; right: -10px; font-family: var(--serif); font-style: italic; color: rgba(246,242,232,.55); font-size: 14px; }
+    .trust-strip { background: var(--paper); border-bottom: 1px solid var(--line); }
+    .trust-inner { max-width: 1220px; margin: auto; padding: 22px 30px; display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+    .trust-item { display: flex; align-items: center; gap: 12px; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: #4e6054; }
+    .trust-icon { color: var(--brass); font-size: 20px; font-family: var(--serif); }
+    section { scroll-margin-top: 90px; }
+    .section { max-width: 1220px; margin: auto; padding: 100px 30px; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 35px; margin-bottom: 42px; }
+    .section-kicker { font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: #8b7444; font-weight: 700; }
+    h2 { font-family: var(--serif); color: var(--green); font-size: clamp(35px, 4vw, 52px); font-weight: 400; line-height: 1.15; letter-spacing: -.025em; margin: 12px 0 0; }
+    .section-intro { max-width: 410px; color: var(--muted); font-size: 13px; line-height: 1.9; margin-bottom: 2px; }
+    .services { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .service-card { min-height: 260px; background: var(--paper); padding: 27px 24px; border: 1px solid rgba(23,59,46,.12); position: relative; transition: .25s ease; }
+    .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: rgba(185,154,92,.55); }
+    .service-number { color: var(--brass); font-family: var(--serif); font-size: 14px; }
+    .service-icon { width: 39px; height: 39px; margin: 23px 0 18px; color: var(--green-2); }
+    .service-card h3 { font-family: var(--serif); font-size: 21px; font-weight: 500; color: var(--green); line-height: 1.25; margin-bottom: 12px; }
+    .service-card p { font-size: 12px; line-height: 1.8; color: var(--muted); margin-bottom: 0; }
+    .service-arrow { position: absolute; bottom: 23px; right: 23px; color: var(--brass); font-size: 18px; }
+    .approach { background: #eae8dc; }
+    .approach-inner { max-width: 1220px; margin: auto; padding: 96px 30px; display: grid; grid-template-columns: .85fr 1.15fr; gap: 90px; align-items: center; }
+    .approach-visual { min-height: 390px; background: var(--green); position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .approach-visual:before { content: ""; width: 280px; height: 280px; border: 1px solid rgba(214,193,141,.5); border-radius: 50%; position: absolute; }
+    .approach-visual:after { content: ""; width: 220px; height: 220px; border: 1px solid rgba(214,193,141,.25); border-radius: 50%; position: absolute; }
+    .approach-quote { position: relative; z-index: 1; max-width: 290px; text-align: center; color: var(--cream); font-family: var(--serif); font-size: 30px; line-height: 1.35; }
+    .approach-quote span { display: block; margin-top: 20px; font-family: var(--sans); text-transform: uppercase; letter-spacing: .2em; font-size: 9px; color: var(--brass-light); }
+    .approach-copy p { font-size: 13px; line-height: 2; color: #5f6b61; margin: 24px 0; }
+    .principles { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 25px; margin: 28px 0 30px; }
+    .principle { border-top: 1px solid rgba(23,59,46,.18); padding-top: 14px; }
+    .principle strong { display: block; font-family: var(--serif); font-weight: 500; font-size: 18px; color: var(--green); }
+    .principle span { display: block; color: var(--muted); font-size: 11px; margin-top: 5px; }
+    .process { background: var(--paper); }
+    .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; margin-top: 45px; }
+    .process-step { border-top: 1px solid var(--brass); padding-top: 22px; }
+    .process-step .num { font-family: var(--serif); font-size: 30px; color: var(--brass); }
+    .process-step h3 { font-family: var(--serif); font-size: 23px; font-weight: 500; color: var(--green); margin: 14px 0 9px; }
+    .process-step p { color: var(--muted); font-size: 12px; line-height: 1.9; }
+    .cta-band { background: var(--green); color: var(--cream); }
+    .cta-inner { max-width: 1220px; margin: auto; padding: 72px 30px; display: flex; align-items: center; justify-content: space-between; gap: 35px; }
+    .cta-inner h2 { color: var(--cream); max-width: 650px; font-size: clamp(32px, 4vw, 48px); }
+    .cta-inner p { color: rgba(246,242,232,.67); margin: 15px 0 0; font-size: 13px; }
+    .cta-inner .button { flex-shrink: 0; background: var(--brass-light); color: var(--green); border-color: var(--brass-light); }
+    .contact { display: grid; grid-template-columns: .9fr 1.1fr; gap: 80px; }
+    .contact-copy p { color: var(--muted); font-size: 13px; line-height: 1.9; margin: 22px 0; }
+    .contact-detail { border-top: 1px solid var(--line); padding: 15px 0; display: flex; gap: 15px; font-size: 12px; }
+    .contact-detail span { color: var(--brass); width: 22px; }
+    .contact-form { background: var(--paper); padding: 32px; border: 1px solid var(--line); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
+    .field { display: flex; flex-direction: column; gap: 7px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: #4d5d51; font-weight: 700; }
+    .field input, .field select, .field textarea { width: 100%; border: 1px solid rgba(23,59,46,.2); background: #fffefb; padding: 12px; outline: none; color: var(--ink); font-size: 12px; border-radius: 0; }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--brass); }
+    .field textarea { min-height: 100px; resize: vertical; }
+    .form-note { font-size: 10px; color: var(--muted); line-height: 1.6; margin: 14px 0 20px; }
+    .form-status { font-size: 12px; color: var(--green); margin-top: 12px; }
+    footer { background: #102c22; color: rgba(246,242,232,.72); }
+    .footer-main { max-width: 1220px; margin: auto; padding: 46px 30px 35px; display: flex; justify-content: space-between; gap: 30px; align-items: start; }
+    .footer-brand .brand-name { color: var(--cream); }
+    .footer-brand .brand-sub { color: rgba(246,242,232,.55); }
+    .footer-tagline { font-family: var(--serif); font-style: italic; font-size: 15px; margin-top: 18px; color: var(--brass-light); }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; font-size: 11px; }
+    .footer-bottom { border-top: 1px solid rgba(246,242,232,.12); max-width: 1220px; margin: auto; padding: 20px 30px 28px; font-size: 10px; line-height: 1.8; color: rgba(246,242,232,.48); display: flex; justify-content: space-between; gap: 25px; }
+    .disclaimer { max-width: 780px; }
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr .75fr; gap: 25px; }
+      .hero-art { min-height: 330px; }
+      .services { grid-template-columns: repeat(2, 1fr); }
+      .approach-inner { gap: 40px; }
+      .contact { gap: 35px; }
+      .nav-links { gap: 16px; }
+    }
+    @media (max-width: 680px) {
+      .topline { font-size: 9px; letter-spacing: .1em; }
+      .nav { padding: 13px 19px; flex-wrap: wrap; }
+      .brand { min-width: 0; }
+      .brand-mark { width: 37px; height: 37px; }
+      .brand-name { font-size: 18px; }
+      .menu-toggle { display: block; }
+      .nav-links { display: none; width: 100%; flex-direction: column; align-items: stretch; gap: 0; padding-top: 8px; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 12px 0; border-top: 1px solid var(--line); }
+      .nav-links .nav-cta { margin-top: 8px; text-align: center; }
+      .hero-inner { padding: 65px 22px 55px; grid-template-columns: 1fr; gap: 35px; }
+      .hero { min-height: 0; }
+      .hero-art { min-height: 310px; }
+      .crest { width: 275px; }
+      .art-caption { right: 0; bottom: -4px; }
+      .trust-inner { padding: 18px 22px; flex-wrap: wrap; justify-content: flex-start; gap: 14px 25px; }
+      .trust-item { font-size: 9px; }
+      .section { padding: 68px 22px; }
+      .section-head { display: block; margin-bottom: 30px; }
+      .section-intro { margin-top: 18px; }
+      .services { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .service-card { padding: 20px 17px; min-height: 260px; }
+      .service-card h3 { font-size: 19px; }
+      .approach-inner { padding: 65px 22px; grid-template-columns: 1fr; gap: 35px; }
+      .approach-visual { min-height: 300px; order: 2; }
+      .approach-copy { order: 1; }
+      .process-grid { grid-template-columns: 1fr; gap: 25px; }
+      .cta-inner { padding: 55px 22px; display: block; }
+      .cta-inner .button { margin-top: 25px; }
+      .contact { grid-template-columns: 1fr; gap: 28px; }
+      .contact-form { padding: 22px 18px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .footer-main { padding: 38px 22px 25px; flex-direction: column; }
+      .footer-bottom { padding: 18px 22px 25px; display: block; }
+      .footer-bottom > div + div { margin-top: 12px; }
+    }
+    @media (max-width: 390px) {
+      .services { grid-template-columns: 1fr; }
+      .service-card { min-height: 225px; }
+      .hero-actions .button { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *:before, *:after { transition: none !important; } }
+
+    /* Clean, frameless hero branding: no arches, rings, or diagonal lines. */
+    .hero::before, .hero::after, .crest-inner::before, .crest-inner::after { display: none !important; }
+    .crest { width: min(100%, 400px); aspect-ratio: auto; border: 0; border-radius: 0; padding: 0; transform: none; }
+    .crest-inner { min-height: 390px; border: 0; border-radius: 0; overflow: visible; background: none; padding: 24px 0 42px; }
+    .crest-sprig { width: 190px; max-width: 65%; height: 205px; object-fit: contain; margin-bottom: 12px; }
+    .art-caption { bottom: 8px; right: 0; left: 0; text-align: center; color: var(--brass-light); font-size: 15px; }
+    @media (max-width: 680px) { .crest { width: 100%; } .crest-inner { min-height: 355px; } .art-caption { bottom: 0; } }
+  </style>
+</head>
+<body>
+  <div class="topline">Thoughtful protection. Personal service. A steadier tomorrow.</div>
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="The Jalali Agency home">
+        <img class="brand-mark" src="cypress-tree.png" alt="" aria-hidden="true">
+        <div><div class="brand-name">The Jalali Agency</div><div class="brand-sub">Insurance Services</div></div>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#services">Coverage</a>
+        <a href="#approach">Our approach</a>
+        <a href="#process">How it works</a>
+        <a href="#contact" class="nav-cta">Start a conversation ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">Insurance, thoughtfully considered</div>
+          <h1>Protect what<br>you’re building.<br><em>Plan for what’s next.</em></h1>
+          <p class="hero-copy">Clear guidance. Considered coverage. A relationship built around understanding your business, your priorities, and the things you’ve worked hard to protect.</p>
+          <div class="hero-actions">
+            <a class="button" href="#contact">Let’s talk about coverage <span>↗</span></a>
+            <a class="button outline" href="#services">Explore solutions</a>
+          </div>
+          <div class="hero-note">Commercial insurance guidance · Built around your needs</div>
+        </div>
+        <div class="hero-art" aria-label="Jalali Agency botanical crest">
+          <div class="crest">
+            <div class="crest-inner">
+              <img class="crest-sprig" src="cypress-tree.png" alt="Traditional Jalali cypress tree">
+              <div class="crest-title">The Jalali<br>Agency</div>
+              <div class="crest-caption">Insurance Services</div>
+            </div>
+          </div>
+          <div class="art-caption">Standing Tall Through Every Season.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="trust-inner">
+        <div class="trust-item"><span class="trust-icon">✳</span> Personal guidance</div>
+        <div class="trust-item"><span class="trust-icon">⌂</span> Business-minded solutions</div>
+        <div class="trust-item"><span class="trust-icon">◇</span> Clear next steps</div>
+        <div class="trust-item"><span class="trust-icon">❧</span> Long-term relationships</div>
+      </div>
+    </div>
+
+    <section id="services">
+      <div class="section">
+        <div class="section-head">
+          <div><div class="section-kicker">Coverage, with context</div><h2>Protection that fits<br>the way you work.</h2></div>
+          <p class="section-intro">Every operation has its own moving parts. We start by learning what matters to you, then help you explore insurance options that make sense for your business.</p>
+        </div>
+        <div class="services">
+          <article class="service-card">
+            <div class="service-number">01 / Mobility</div>
+            <svg class="service-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M7 29l4-12c.8-2.2 2.4-3.5 4.7-3.5h12.6c2.3 0 4 1.3 4.7 3.5l4 12v9H7v-9Z" stroke="currentColor" stroke-width="1.5"/><path d="M10 27h27M15 35h.1M32 35h.1M16 14l2-4h10l2 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="15" cy="35" r="2.5" stroke="currentColor" stroke-width="1.5"/><circle cx="32" cy="35" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg>
+            <h3>Commercial Auto</h3>
+            <p>Coverage conversations for vehicles used in the course of business, from individual work vehicles to growing fleets.</p>
+            <span class="service-arrow">↗</span>
+          </article>
+          <article class="service-card">
+            <div class="service-number">02 / Responsibility</div>
+            <svg class="service-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 6 39 12v11c0 9-6.2 15.3-15 19-8.8-3.7-15-10-15-19V12L24 6Z" stroke="currentColor" stroke-width="1.5"/><path d="m17 24 5 5 10-11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3>General Liability</h3>
+            <p>Explore protection for common third-party bodily injury, property damage, and related liability exposures.</p>
+            <span class="service-arrow">↗</span>
+          </article>
+          <article class="service-card">
+            <div class="service-number">03 / Workplace</div>
+            <svg class="service-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M7 40V17l17-9 17 9v23H7Z" stroke="currentColor" stroke-width="1.5"/><path d="M18 40V27h12v13M14 20h.1M24 20h.1M34 20h.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <h3>Workers’ Compensation</h3>
+            <p>Understand coverage considerations for businesses with employees and workplace responsibilities.</p>
+            <span class="service-arrow">↗</span>
+          </article>
+          <article class="service-card">
+            <div class="service-number">04 / Business</div>
+            <svg class="service-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="7" y="16" width="34" height="25" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M17 16v-5h14v5M7 26h34M21 26v4h6v-4" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            <h3>Business Insurance</h3>
+            <p>Review business property, equipment, and other exposures that may be addressed through a tailored insurance program.</p>
+            <span class="service-arrow">↗</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach" id="approach">
+      <div class="approach-inner">
+        <div class="approach-visual">
+          <div class="approach-quote">Standing with you,<br>for what matters.<span>The Jalali Agency</span></div>
+        </div>
+        <div class="approach-copy">
+          <div class="section-kicker">A more considered approach</div>
+          <h2>Insurance should feel clearer, not more complicated.</h2>
+          <p>Choosing coverage can feel like learning a new language. Our aim is to make the conversation more straightforward: understand your operation, identify important exposures, and explain options in plain language.</p>
+          <div class="principles">
+            <div class="principle"><strong>Listen first</strong><span>Your business is the starting point.</span></div>
+            <div class="principle"><strong>Explain clearly</strong><span>Understand what you’re considering.</span></div>
+            <div class="principle"><strong>Compare thoughtfully</strong><span>Focus on fit, not just a price.</span></div>
+            <div class="principle"><strong>Stay connected</strong><span>Build a relationship beyond the quote.</span></div>
+          </div>
+          <a class="button outline" href="#contact">Start a conversation ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="section">
+        <div class="section-kicker">A simple place to start</div>
+        <h2>Three steps toward<br>a clearer picture.</h2>
+        <div class="process-grid">
+          <article class="process-step"><div class="num">01</div><h3>Tell us about your work</h3><p>Share what your business does, what you need to protect, and what questions are on your mind.</p></article>
+          <article class="process-step"><div class="num">02</div><h3>Review the possibilities</h3><p>Discuss relevant coverage needs, information required for quoting, and potential options available through appointed markets.</p></article>
+          <article class="process-step"><div class="num">03</div><h3>Choose your next step</h3><p>Get a clearer understanding of the options and decide how you’d like to move forward. No pressure, just a considered conversation.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="cta-inner">
+        <div><div class="section-kicker">Your business deserves a thoughtful conversation</div><h2>Let’s talk about what you’re building.</h2><p>Start with a question. We’ll take it one step at a time.</p></div>
+        <a class="button" href="#contact">Get in touch ↗</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section contact">
+        <div class="contact-copy">
+          <div class="section-kicker">Get in touch</div>
+          <h2>Let’s start with a conversation.</h2>
+          <p>Tell us a little about your business and the coverage you’re exploring. We’ll follow up once the agency’s contact details and intake process are configured.</p>
+          <div class="contact-detail"><span>✳</span><div><strong>Personal service</strong><br>Thoughtful guidance, one conversation at a time.</div></div>
+          <div class="contact-detail"><span>⌖</span><div><strong>Service area</strong><br>California — final service area to be confirmed.</div></div>
+          <div class="contact-detail"><span>✉</span><div><strong>Agency contact</strong><br>Phone and business email will be added before launch.</div></div>
+        </div>
+        <form class="contact-form" id="quoteForm">
+          <div class="form-grid">
+            <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required placeholder="Full name"></div>
+            <div class="field"><label for="business">Business name</label><input id="business" name="business" autocomplete="organization" placeholder="Company (if applicable)"></div>
+            <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="you@company.com"></div>
+            <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Best callback number"></div>
+            <div class="field full"><label for="coverage">What are you exploring?</label><select id="coverage" name="coverage" required><option value="">Choose a coverage type</option><option>Commercial auto</option><option>General liability</option><option>Workers’ compensation</option><option>Business owners / property</option><option>Multiple coverages</option><option>Not sure yet</option></select></div>
+            <div class="field full"><label for="message">A little about your needs</label><textarea id="message" name="message" placeholder="Tell us about your business or questions. Please don't include sensitive personal, financial, or claims information."></textarea></div>
+          </div>
+          <p class="form-note">Website preview only: this form is not connected to an inbox and will not transmit your information. We’ll connect a secure intake method before the site goes live.</p>
+          <button class="button" type="submit">Preview request ↗</button>
+          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a class="brand" href="#home">
+          <img class="brand-mark" src="cypress-tree.png" alt="" aria-hidden="true">
+          <div><div class="brand-name">The Jalali Agency</div><div class="brand-sub">Insurance Services</div></div>
+        </a>
+        <div class="footer-tagline">Standing Tall Through Every Season.</div>
+      </div>
+      <div class="footer-links"><a href="#services">Coverage</a><a href="#approach">Our approach</a><a href="#process">How it works</a><a href="#contact">Contact</a></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="disclaimer">Coverage descriptions are general information only and do not amend, extend, or replace any insurance policy. Coverage availability, terms, limits, exclusions, and eligibility vary. A quote or request does not bind coverage. Final website copy, license details, carrier relationships, disclosures, and contact information must be reviewed and confirmed before publication.</div>
+      <div>© <span id="year"></span> Jalali Insurance Services. All rights reserved.</div>
+    </div>
+  </footer>
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('quoteForm').addEventListener('submit', event => {
+      event.preventDefault();
+      document.getElementById('formStatus').textContent = 'Preview only — your details have not been sent or stored. We’ll connect this form before launch.';
+    });
+  </script>
+</body>
+</html>
