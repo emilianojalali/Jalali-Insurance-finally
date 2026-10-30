@@ -194,6 +194,33 @@
     .crest-sprig { width: 190px; max-width: 65%; height: 205px; object-fit: contain; margin-bottom: 12px; }
     .art-caption { bottom: 8px; right: 0; left: 0; text-align: center; color: var(--brass-light); font-size: 15px; }
     @media (max-width: 680px) { .crest { width: 100%; } .crest-inner { min-height: 355px; } .art-caption { bottom: 0; } }
+
+    /* Version 2: accessible, expandable coverage cards */
+    .service-card { cursor: pointer; }
+    .service-card:focus-within, .service-card.is-active { border-color: var(--brass); box-shadow: var(--shadow); }
+    .service-card .card-trigger { position:absolute; inset:0; width:100%; border:0; background:transparent; cursor:pointer; color:transparent; font-size:0; z-index:2; }
+    .service-card .card-trigger:focus-visible { outline:3px solid var(--brass); outline-offset:3px; }
+    .service-card .service-arrow { pointer-events:none; transition: transform .25s ease; }
+    .service-card.is-active .service-arrow { transform:rotate(45deg); }
+    .coverage-panel { margin-top:18px; padding:30px 34px; background:#eae8dc; border:1px solid rgba(23,59,46,.2); position:relative; animation: revealPanel .25s ease; }
+    .coverage-panel[hidden] { display:none; }
+    .coverage-panel h3 { font-family:var(--serif); color:var(--green); font-size:clamp(25px,3vw,36px); font-weight:400; margin:8px 0 12px; }
+    .coverage-panel p { color:var(--muted); font-size:13px; line-height:1.9; max-width:850px; }
+    .coverage-panel ul { color:var(--green); font-size:12px; line-height:2; margin:14px 0 22px; padding-left:20px; }
+    .coverage-panel .button { display:inline-flex; }
+    .panel-close { position:absolute; top:16px; right:18px; background:transparent; border:1px solid var(--line); padding:7px 12px; cursor:pointer; color:var(--green); }
+    @keyframes revealPanel { from {opacity:0;transform:translateY(8px)} to {opacity:1;transform:translateY(0)} }
+    .personal-feature { margin-top:32px; padding:34px; background:var(--green); color:var(--cream); }
+    .personal-feature h3 { font-family:var(--serif); font-size:clamp(28px,3vw,40px); font-weight:400; margin:10px 0; }
+    .personal-feature p { font-size:13px; line-height:1.85; color:#e4e6da; max-width:700px; }
+    .personal-feature .section-kicker { color:var(--brass-light); }
+    .personal-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:25px; }
+    .personal-grid .service-card { min-height:190px; padding:22px; }
+    .personal-grid .service-icon { margin:10px 0 8px; height:31px; }
+    .personal-grid .service-card h3 { font-size:23px; margin-bottom:9px; }
+    .personal-grid .service-card p { color:var(--muted); }
+    @media(max-width:720px){ .personal-grid{grid-template-columns:1fr;} .personal-feature{padding:25px 20px;} .coverage-panel{padding:27px 20px;} }
+
   </style>
 </head>
 <body>
@@ -262,6 +289,8 @@
             <h3>Commercial Auto</h3>
             <p>Coverage conversations for vehicles used in the course of business, from individual work vehicles to growing fleets.</p>
             <span class="service-arrow">↗</span>
+          
+            <button type="button" class="card-trigger" data-coverage="Commercial auto" aria-label="Learn more about Commercial Auto" aria-controls="coveragePanel" aria-expanded="false"></button>
           </article>
           <article class="service-card">
             <div class="service-number">02 / Responsibility</div>
@@ -269,6 +298,8 @@
             <h3>General Liability</h3>
             <p>Explore protection for common third-party bodily injury, property damage, and related liability exposures.</p>
             <span class="service-arrow">↗</span>
+          
+            <button type="button" class="card-trigger" data-coverage="General liability" aria-label="Learn more about General Liability" aria-controls="coveragePanel" aria-expanded="false"></button>
           </article>
           <article class="service-card">
             <div class="service-number">03 / Workplace</div>
@@ -276,6 +307,8 @@
             <h3>Workers’ Compensation</h3>
             <p>Understand coverage considerations for businesses with employees and workplace responsibilities.</p>
             <span class="service-arrow">↗</span>
+          
+            <button type="button" class="card-trigger" data-coverage="Workers’ compensation" aria-label="Learn more about Workers’ Compensation" aria-controls="coveragePanel" aria-expanded="false"></button>
           </article>
           <article class="service-card">
             <div class="service-number">04 / Business</div>
@@ -283,7 +316,43 @@
             <h3>Business Insurance</h3>
             <p>Review business property, equipment, and other exposures that may be addressed through a tailored insurance program.</p>
             <span class="service-arrow">↗</span>
+          
+            <button type="button" class="card-trigger" data-coverage="Business owners / property" aria-label="Learn more about Business Insurance" aria-controls="coveragePanel" aria-expanded="false"></button>
           </article>
+        </div>
+
+        <div class="coverage-panel" id="coveragePanel" hidden tabindex="-1" aria-live="polite">
+          <button type="button" class="panel-close" id="closeCoverage" aria-label="Close coverage details">✕</button>
+          <div class="section-kicker">Explore coverage</div>
+          <h3 id="panelTitle"></h3>
+          <p id="panelDescription"></p>
+          <ul id="panelPoints"></ul>
+          <a class="button" id="panelQuote" href="#contact">Explore a quote ↗</a>
+        </div>
+        <div class="personal-feature" id="personal">
+          <div class="section-kicker">Protection beyond business</div>
+          <h3>Your life deserves thoughtful coverage, too.</h3>
+          <p>From your everyday commute to the place you call home, explore personal insurance options with the same thoughtful approach.</p>
+          <div class="personal-grid">
+            <article class="service-card">
+              <div class="service-number">05 / On the road</div>
+              <svg class="service-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M7 29l4-12c1-2 3-3 5-3h16c2 0 4 1 5 3l4 12v9H7v-9ZM10 28h28" stroke="currentColor" stroke-width="1.5"/><circle cx="15" cy="35" r="2.5" stroke="currentColor"/><circle cx="33" cy="35" r="2.5" stroke="currentColor"/></svg>
+              <h3>Personal Auto</h3><p>Explore options for everyday driving and personal vehicles.</p><span class="service-arrow">↗</span>
+              <button type="button" class="card-trigger" data-coverage="Personal auto" aria-label="Learn more about Personal Auto" aria-controls="coveragePanel" aria-expanded="false"></button>
+            </article>
+            <article class="service-card">
+              <div class="service-number">06 / Your home</div>
+              <svg class="service-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="m6 23 18-15 18 15v19H6V23Zm12 19V28h12v14" stroke="currentColor" stroke-width="1.5"/></svg>
+              <h3>Homeowners</h3><p>Explore coverage for your home, belongings, and liability exposures.</p><span class="service-arrow">↗</span>
+              <button type="button" class="card-trigger" data-coverage="Homeowners" aria-label="Learn more about Homeowners" aria-controls="coveragePanel" aria-expanded="false"></button>
+            </article>
+            <article class="service-card">
+              <div class="service-number">07 / Where you live</div>
+              <svg class="service-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M10 42V7h28v35H10ZM17 15h5m4 0h5m-14 8h5m4 0h5M20 42V31h8v11" stroke="currentColor" stroke-width="1.5"/></svg>
+              <h3>Renters</h3><p>Consider protection for personal belongings and certain liabilities.</p><span class="service-arrow">↗</span>
+              <button type="button" class="card-trigger" data-coverage="Renters" aria-label="Learn more about Renters" aria-controls="coveragePanel" aria-expanded="false"></button>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -332,7 +401,7 @@
         <div class="contact-copy">
           <div class="section-kicker">Get in touch</div>
           <h2>Let’s start with a conversation.</h2>
-          <p>Tell us a little about your business and the coverage you’re exploring. We’ll follow up once the agency’s contact details and intake process are configured.</p>
+          <p>Tell us a little about yourself or your business and the coverage you’re exploring. We’ll follow up once the agency’s contact details and intake process are configured.</p>
           <div class="contact-detail"><span>✳</span><div><strong>Personal service</strong><br>Thoughtful guidance, one conversation at a time.</div></div>
           <div class="contact-detail"><span>⌖</span><div><strong>Service area</strong><br>California — final service area to be confirmed.</div></div>
           <div class="contact-detail"><span>✉</span><div><strong>Agency contact</strong><br>Phone and business email will be added before launch.</div></div>
@@ -343,8 +412,8 @@
             <div class="field"><label for="business">Business name</label><input id="business" name="business" autocomplete="organization" placeholder="Company (if applicable)"></div>
             <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="you@company.com"></div>
             <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Best callback number"></div>
-            <div class="field full"><label for="coverage">What are you exploring?</label><select id="coverage" name="coverage" required><option value="">Choose a coverage type</option><option>Commercial auto</option><option>General liability</option><option>Workers’ compensation</option><option>Business owners / property</option><option>Multiple coverages</option><option>Not sure yet</option></select></div>
-            <div class="field full"><label for="message">A little about your needs</label><textarea id="message" name="message" placeholder="Tell us about your business or questions. Please don't include sensitive personal, financial, or claims information."></textarea></div>
+            <div class="field full"><label for="coverage">What are you exploring?</label><select id="coverage" name="coverage" required><option value="">Choose a coverage type</option><optgroup label="Business insurance"><option>Commercial auto</option><option>General liability</option><option>Workers’ compensation</option><option>Business owners / property</option><option>Commercial property</option><option>Other commercial coverage</option></optgroup><optgroup label="Personal insurance"><option>Personal auto</option><option>Homeowners</option><option>Renters</option><option>Condo</option><option>Personal umbrella</option><option>Other personal coverage</option></optgroup><optgroup label="Not sure?"><option>Multiple coverages</option><option>Not sure yet</option></optgroup></select></div>
+            <div class="field full"><label for="message">A little about your needs</label><textarea id="message" name="message" placeholder="Tell us a little about what you need. Please don't include sensitive personal, financial, or claims information."></textarea></div>
           </div>
           <p class="form-note">Website preview only: this form is not connected to an inbox and will not transmit your information. We’ll connect a secure intake method before the site goes live.</p>
           <button class="button" type="submit">Preview request ↗</button>
@@ -381,6 +450,48 @@
       navLinks.classList.remove('open');
       menuToggle.setAttribute('aria-expanded', 'false');
     }));
+
+    const coverageDetails = {
+      'Commercial auto': ['Commercial Auto', 'Explore insurance for vehicles used for business purposes, whether you operate a single work vehicle or a fleet.', ['Business-use vehicles and driver considerations', 'Liability and physical damage options', 'Vehicle use, operations, and eligibility review']],
+      'General liability': ['General Liability', 'Explore protection for certain claims involving third-party injuries, property damage, and related liability exposures.', ['Premises and operations considerations', 'Certain bodily injury and property damage claims', 'Contractual and industry-specific requirements']],
+      'Workers’ compensation': ['Workers’ Compensation', 'Explore coverage related to workplace injuries and occupational illnesses, subject to applicable law and policy terms.', ['Employee and payroll information', 'Business classifications and operations', 'State requirements and coverage options']],
+      'Business owners / property': ['Business Insurance', 'Explore business owners policies, commercial property, and other options based on your operations and exposures.', ['Buildings, contents, and equipment', 'Business interruption considerations', 'Liability and packaged policy options']],
+      'Personal auto': ['Personal Auto', 'Explore personal auto coverage options suited to your driving needs and household.', ['Liability coverage considerations', 'Collision and comprehensive options', 'Drivers, vehicles, and usage details']],
+      'Homeowners': ['Homeowners Insurance', 'Explore insurance options for your home, belongings, and certain personal liability exposures.', ['Dwelling and personal property considerations', 'Personal liability options', 'Deductibles and coverage limits']],
+      'Renters': ['Renters Insurance', 'Explore options for belongings and certain liability exposures when renting your home.', ['Personal belongings coverage', 'Personal liability considerations', 'Loss-of-use options where available']]
+    };
+    const panel = document.getElementById('coveragePanel');
+    const cardButtons = document.querySelectorAll('.card-trigger');
+    const coverageSelect = document.getElementById('coverage');
+    function closePanel() {
+      panel.hidden = true;
+      cardButtons.forEach(button => {button.setAttribute('aria-expanded','false'); button.closest('.service-card').classList.remove('is-active');});
+    }
+    cardButtons.forEach(button => button.addEventListener('click', () => {
+      const key = button.dataset.coverage;
+      const alreadyOpen = !panel.hidden && button.getAttribute('aria-expanded') === 'true';
+      closePanel();
+      if (alreadyOpen) return;
+      const [title, description, points] = coverageDetails[key];
+      document.getElementById('panelTitle').textContent = title;
+      document.getElementById('panelDescription').textContent = description;
+      const list = document.getElementById('panelPoints');
+      list.replaceChildren();
+      points.forEach(point => { const li = document.createElement('li'); li.textContent = point; list.appendChild(li); });
+      document.getElementById('panelQuote').dataset.coverage = key;
+      panel.hidden = false;
+      button.setAttribute('aria-expanded','true');
+      button.closest('.service-card').classList.add('is-active');
+      // The panel sits directly below commercial cards; scroll to it for personal cards.
+      if (button.closest('.personal-grid')) panel.scrollIntoView({behavior:'smooth',block:'center'});
+    }));
+    document.getElementById('closeCoverage').addEventListener('click', closePanel);
+    document.getElementById('panelQuote').addEventListener('click', event => {
+      const key = event.currentTarget.dataset.coverage;
+      coverageSelect.value = key;
+      closePanel();
+    });
+
     document.getElementById('year').textContent = new Date().getFullYear();
     document.getElementById('quoteForm').addEventListener('submit', event => {
       event.preventDefault();
