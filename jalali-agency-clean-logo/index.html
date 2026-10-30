@@ -1,12 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- JALALI INSURANCE AGENCY - DEVELOPMENT TEST -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#173b2e">
-  <meta name="description" content="Thoughtful insurance guidance for businesses and individuals. Explore commercial insurance solutions with Jalali Insurance Services.">
-  <title>The Jalali Agency | Insurance, thoughtfully considered</title>
+  <meta name="description" content="Jalali Insurance Agency — thoughtful commercial and personal insurance guidance for individuals and businesses across California.">
+  <title>Jalali Insurance Agency | Standing tall through every season</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
@@ -221,25 +220,145 @@
     .personal-grid .service-card p { color:var(--muted); }
     @media(max-width:720px){ .personal-grid{grid-template-columns:1fr;} .personal-feature{padding:25px 20px;} .coverage-panel{padding:27px 20px;} }
 
+
+
+    /* V3: polish, accessible navigation, founder, FAQs, and inquiry form */
+    .brand { min-width:245px; }
+    .brand-name { font-size:18px; line-height:1.17; }
+    .brand-sub { font-size:8px; letter-spacing:.11em; text-transform:none; }
+    .nav-links { gap:18px; }
+    .nav-links a { white-space:nowrap; }
+    .nav-links a:not(.nav-cta):focus-visible,.footer-links a:focus-visible,.founder-link:focus-visible { outline:2px solid var(--brass); outline-offset:4px; }
+    .crest-title { font-size:clamp(27px,3vw,38px); }
+    .crest-caption { letter-spacing:.16em; }
+    .mobile-nav-backdrop[hidden], .coverage-panel[hidden], [hidden] { display:none!important; }
+    .founder-section { background:#eae8dc; }
+    .founder-inner { display:grid; grid-template-columns:.82fr 1.18fr; gap:70px; align-items:center; }
+    .founder-mark { min-height:340px; background:var(--green); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px; position:relative; overflow:hidden; }
+    .founder-mark:after { content:""; position:absolute; inset:22px; border:1px solid rgba(214,193,141,.3); pointer-events:none; }
+    .founder-mark img { display:block; width:150px; height:190px; object-fit:contain; }
+    .founder-mark span { color:var(--brass-light); font:italic 19px var(--serif); }
+    .founder-copy h2 { max-width:640px; }
+    .founder-copy p { font-size:13px; color:#5f6b61; line-height:2; max-width:570px; }
+    .founder-byline { margin:24px 0 18px; color:var(--green); font:500 22px var(--serif); }
+    .founder-byline span { font:500 10px var(--sans); letter-spacing:.06em; color:var(--muted); }
+    .founder-link { display:inline-flex; gap:14px; align-items:center; color:var(--green); border-bottom:1px solid var(--brass); padding:8px 0; text-transform:uppercase; letter-spacing:.09em; font-weight:700; font-size:10px; }
+    .founder-link span { color:var(--brass); font-size:17px; }
+    .why-section { background:var(--cream); }
+    .why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .why-item { border:1px solid var(--line); background:var(--paper); padding:32px; min-height:260px; }
+    .why-symbol { color:var(--brass); font:normal 28px var(--serif); }
+    .why-number { display:block; color:var(--brass); font-size:9px; letter-spacing:.16em; text-transform:uppercase; margin:20px 0 8px; }
+    .why-item h3 { font:500 25px var(--serif); color:var(--green); margin:0 0 12px; }
+    .why-item p { color:var(--muted); font-size:12px; line-height:1.9; }
+    .faq-section { background:#eae8dc; }
+    .faq-layout { display:grid; grid-template-columns:.72fr 1.28fr; gap:70px; align-items:start; }
+    .faq-heading { position:sticky; top:110px; }
+    .faq-heading p { color:var(--muted); font-size:13px; line-height:1.9; max-width:340px; margin:25px 0 18px; }
+    .faq-list { border-top:1px solid rgba(23,59,46,.23); }
+    .faq-list details { border-bottom:1px solid rgba(23,59,46,.23); }
+    .faq-list summary { list-style:none; cursor:pointer; color:var(--green); font-size:14px; font-weight:600; padding:23px 0; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .faq-list summary::-webkit-details-marker { display:none; }
+    .faq-list summary:focus-visible { outline:2px solid var(--brass); outline-offset:3px; }
+    .faq-indicator { border:1px solid rgba(23,59,46,.3); flex:0 0 30px; width:30px; height:30px; display:grid; place-items:center; color:var(--brass); font-size:19px; font-weight:400; transition:transform .2s ease; }
+    .faq-list details[open] .faq-indicator { transform:rotate(45deg); }
+    .faq-answer { color:#627064; font-size:12px; line-height:1.9; max-width:590px; padding:0 40px 24px 0; }
+    .personal-panel { background:#f0efe5; }
+    .personal-panel h3, .personal-panel ul { color:var(--green); }
+    .personal-panel p { color:#536558; }
+    .contact-form { box-shadow:0 18px 58px rgba(18,43,32,.06); }
+    .form-header { margin-bottom:22px; }
+    .form-header h3 { font:400 30px var(--serif); color:var(--green); margin:7px 0; }
+    .form-header p { font-size:12px; color:var(--muted); margin:0; }
+    .insurance-choice { border:0; margin:0 0 24px; padding:0; display:grid; grid-template-columns:repeat(3,1fr); gap:9px; min-width:0; }
+    .insurance-choice legend { grid-column:1/-1; width:100%; font-size:10px; color:#4d5d51; letter-spacing:.09em; text-transform:uppercase; font-weight:700; padding:0 0 11px; }
+    .choice-card { display:flex; flex-direction:column; gap:14px; justify-content:space-between; min-height:113px; padding:14px 12px; border:1px solid var(--line); cursor:pointer; transition:.2s ease; background:#fffefa; position:relative; }
+    .choice-card:hover { border-color:var(--brass); }
+    .choice-card:has(input:checked) { border-color:var(--green); background:#e9eee7; }
+    .choice-card:has(input:focus-visible) { outline:3px solid var(--brass); outline-offset:2px; }
+    .choice-card input { position:absolute; width:1px; height:1px; opacity:0; }
+    .choice-card strong { display:block; color:var(--green); font-size:11px; line-height:1.5; }
+    .choice-card small { display:block; font-size:10px; color:var(--muted); line-height:1.5; margin-top:4px; }
+    .choice-check { align-self:flex-end; color:var(--brass); }
+    .field input:focus-visible,.field select:focus-visible,.field textarea:focus-visible,.consent-row input:focus-visible { outline:2px solid var(--brass); outline-offset:2px; }
+    .consent-row { display:flex; gap:11px; align-items:flex-start; font-size:11px; color:#536558; line-height:1.65; margin-top:23px; cursor:pointer; }
+    .consent-row input { margin-top:4px; accent-color:var(--green); width:16px; height:16px; flex:0 0 auto; }
+    .form-note a { text-decoration:underline; text-underline-offset:2px; }
+    .form-submit[disabled] { opacity:.67; cursor:not-allowed; transform:none; }
+    .form-status { min-height:24px; line-height:1.5; }
+    .form-status.is-error { color:#9b3b31; }
+    .form-status.is-success { color:#226b42; }
+    .honeypot { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+    .prelaunch-note { background:#eae8dc; border-left:3px solid var(--brass); padding:16px; font-size:11px!important; line-height:1.8!important; }
+    .contact-detail a { text-decoration:underline; text-underline-offset:3px; overflow-wrap:anywhere; }
+    .privacy-strip { background:#e9e8df; }
+    .privacy-inner { display:grid; grid-template-columns:.7fr 1.3fr; gap:65px; padding-top:38px; padding-bottom:38px; }
+    .privacy-inner h2 { font-size:26px; }
+    .privacy-inner p { font-size:11px; color:var(--muted); line-height:1.9; margin:0; }
+    @media(max-width:1000px) {
+      header { z-index:40; }
+      .nav { position:relative; min-height:72px; }
+      .menu-toggle { display:inline-flex; align-items:center; gap:10px; margin-left:auto; cursor:pointer; border:1px solid var(--line); background:transparent; color:var(--green); font-size:11px; padding:10px 12px; z-index:3; }
+      .hamburger { display:flex; flex-direction:column; gap:4px; }
+      .hamburger i { display:block; width:18px; height:1.5px; background:currentColor; transition:transform .2s ease,opacity .2s ease; }
+      .menu-toggle.is-open .hamburger i:first-child { transform:translateY(5.5px) rotate(45deg); }
+      .menu-toggle.is-open .hamburger i:nth-child(2) { opacity:0; }
+      .menu-toggle.is-open .hamburger i:last-child { transform:translateY(-5.5px) rotate(-45deg); }
+      .nav-links { display:none; position:absolute; top:100%; right:0; left:0; width:100%; padding:14px 30px 27px; flex-direction:column; align-items:stretch; gap:0; background:var(--green); color:var(--cream); box-shadow:0 20px 40px rgba(18,43,32,.25); }
+      .nav-links.open { display:flex; }
+      .nav-links a { display:block; padding:13px 6px; border-top:1px solid rgba(246,242,232,.16); font-size:13px; }
+      .nav-links a:not(.nav-cta):hover { color:var(--brass-light); }
+      .nav-links .nav-cta { text-align:center; justify-content:center; background:var(--brass-light); color:var(--green); margin-top:18px; padding:15px; border:0; }
+      .mobile-nav-backdrop:not([hidden]) { position:fixed; inset:0; z-index:30; background:rgba(16,33,25,.38); }
+    }
+    @media(max-width:800px) {
+      .founder-inner { grid-template-columns:1fr; gap:28px; }
+      .founder-mark { min-height:270px; }
+      .why-grid { grid-template-columns:1fr; }
+      .why-item { min-height:0; }
+      .faq-layout { grid-template-columns:1fr; gap:20px; }
+      .faq-heading { position:static; }
+      .privacy-inner { grid-template-columns:1fr; gap:10px; }
+    }
+    @media(max-width:680px) {
+      .nav { flex-wrap:nowrap; padding:12px 19px; }
+      .nav-links { padding:14px 21px 26px; }
+      .nav-links a { color:var(--cream); }
+      .brand { min-width:0; }
+      .brand-name { font-size:15px; }
+      .brand-sub { letter-spacing:.04em; font-size:7px; }
+      .menu-toggle { padding:9px; }
+      .menu-label { display:none; }
+      .crest-title { font-size:32px; }
+      .insurance-choice { grid-template-columns:1fr; }
+      .choice-card { min-height:0; flex-direction:row; align-items:center; padding:12px; }
+      .faq-list summary { font-size:13px; padding:20px 0; }
+      .contact-detail { overflow-wrap:anywhere; }
+    }
+    @media(max-width:360px) { .brand-name { font-size:13px; } }
+
   </style>
 </head>
 <body>
   <div class="topline">Thoughtful protection. Personal service. A steadier tomorrow.</div>
   <header>
     <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="#home" aria-label="The Jalali Agency home">
+      <a class="brand" href="#home" aria-label="Jalali Insurance Agency home">
         <img class="brand-mark" src="cypress-tree.png" alt="" aria-hidden="true">
-        <div><div class="brand-name">The Jalali Agency</div><div class="brand-sub">Insurance Services</div></div>
+        <div><div class="brand-name">Jalali Insurance Agency</div><div class="brand-sub">Standing tall through every season.</div></div>
       </a>
-      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu"><span class="hamburger" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-label">Menu</span></button>
       <div class="nav-links" id="navLinks">
-        <a href="#services">Coverage</a>
+        <a href="#home">Home</a>
+        <a href="#services">Business insurance</a>
+        <a href="#personal">Personal insurance</a>
         <a href="#approach">Our approach</a>
-        <a href="#process">How it works</a>
-        <a href="#contact" class="nav-cta">Start a conversation ↗</a>
+        <a href="#faqs">FAQs</a>
+        <a href="#contact" class="nav-cta">Get in touch ↗</a>
       </div>
     </nav>
   </header>
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop" hidden></div>
 
   <main>
     <section class="hero" id="home">
@@ -247,22 +366,22 @@
         <div>
           <div class="eyebrow">Insurance, thoughtfully considered</div>
           <h1>Build Your<br>Future<br><em>With Confidence.</em></h1>
-          <p class="hero-copy">Clear guidance. Considered coverage. A relationship built around understanding your business, your priorities, and the things you’ve worked hard to protect.</p>
+          <p class="hero-copy">Clear guidance. Considered coverage. A relationship built around understanding your business, your life, and the things you’ve worked hard to protect.</p>
           <div class="hero-actions">
             <a class="button" href="#contact">Let’s talk about coverage <span>↗</span></a>
             <a class="button outline" href="#services">Explore solutions</a>
           </div>
-          <div class="hero-note">Commercial insurance guidance · Built around your needs</div>
+          <div class="hero-note">Commercial &amp; personal coverage conversations · California statewide</div>
         </div>
-        <div class="hero-art" aria-label="Jalali Agency botanical crest">
+        <div class="hero-art" aria-label="Jalali Insurance Agency cypress tree branding">
           <div class="crest">
             <div class="crest-inner">
               <img class="crest-sprig" src="cypress-tree.png" alt="Traditional Jalali cypress tree">
-              <div class="crest-title">The Jalali<br>Agency</div>
-              <div class="crest-caption">Insurance Services</div>
+              <div class="crest-title">Jalali<br>Insurance Agency</div>
+              <div class="crest-caption">California · Independent-minded service</div>
             </div>
           </div>
-          <div class="art-caption">Standing Tall Through Every Season.</div>
+          <div class="art-caption">Standing tall through every season.</div>
         </div>
       </div>
     </section>
@@ -338,20 +457,28 @@
               <div class="service-number">05 / On the road</div>
               <svg class="service-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M7 29l4-12c1-2 3-3 5-3h16c2 0 4 1 5 3l4 12v9H7v-9ZM10 28h28" stroke="currentColor" stroke-width="1.5"/><circle cx="15" cy="35" r="2.5" stroke="currentColor"/><circle cx="33" cy="35" r="2.5" stroke="currentColor"/></svg>
               <h3>Personal Auto</h3><p>Explore options for everyday driving and personal vehicles.</p><span class="service-arrow">↗</span>
-              <button type="button" class="card-trigger" data-coverage="Personal auto" aria-label="Learn more about Personal Auto" aria-controls="coveragePanel" aria-expanded="false"></button>
+              <button type="button" class="card-trigger" data-coverage="Personal auto" aria-label="Learn more about Personal Auto" aria-controls="personalCoveragePanel" aria-expanded="false"></button>
             </article>
             <article class="service-card">
               <div class="service-number">06 / Your home</div>
               <svg class="service-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="m6 23 18-15 18 15v19H6V23Zm12 19V28h12v14" stroke="currentColor" stroke-width="1.5"/></svg>
               <h3>Homeowners</h3><p>Explore coverage for your home, belongings, and liability exposures.</p><span class="service-arrow">↗</span>
-              <button type="button" class="card-trigger" data-coverage="Homeowners" aria-label="Learn more about Homeowners" aria-controls="coveragePanel" aria-expanded="false"></button>
+              <button type="button" class="card-trigger" data-coverage="Homeowners" aria-label="Learn more about Homeowners" aria-controls="personalCoveragePanel" aria-expanded="false"></button>
             </article>
             <article class="service-card">
               <div class="service-number">07 / Where you live</div>
               <svg class="service-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M10 42V7h28v35H10ZM17 15h5m4 0h5m-14 8h5m4 0h5M20 42V31h8v11" stroke="currentColor" stroke-width="1.5"/></svg>
               <h3>Renters</h3><p>Consider protection for personal belongings and certain liabilities.</p><span class="service-arrow">↗</span>
-              <button type="button" class="card-trigger" data-coverage="Renters" aria-label="Learn more about Renters" aria-controls="coveragePanel" aria-expanded="false"></button>
+              <button type="button" class="card-trigger" data-coverage="Renters" aria-label="Learn more about Renters" aria-controls="personalCoveragePanel" aria-expanded="false"></button>
             </article>
+          </div>
+          <div class="coverage-panel personal-panel" id="personalCoveragePanel" hidden tabindex="-1" aria-live="polite">
+            <button type="button" class="panel-close" id="closePersonalCoverage" aria-label="Close personal insurance details">✕</button>
+            <div class="section-kicker">Explore personal coverage</div>
+            <h3 id="personalPanelTitle"></h3>
+            <p id="personalPanelDescription"></p>
+            <ul id="personalPanelPoints"></ul>
+            <a class="button" id="personalPanelQuote" href="#contact">Explore a quote ↗</a>
           </div>
         </div>
       </div>
@@ -360,7 +487,7 @@
     <section class="approach" id="approach">
       <div class="approach-inner">
         <div class="approach-visual">
-          <div class="approach-quote">Standing with you,<br>for what matters.<span>The Jalali Agency</span></div>
+          <div class="approach-quote">Standing with you,<br>for what matters.<span>Jalali Insurance Agency</span></div>
         </div>
         <div class="approach-copy">
           <div class="section-kicker">A more considered approach</div>
@@ -377,21 +504,72 @@
       </div>
     </section>
 
+
+    <section class="why-section" id="why-jalali">
+      <div class="section">
+        <div class="section-head">
+          <div><div class="section-kicker">Why choose Jalali?</div><h2>Independent guidance.<br>Personal attention.</h2></div>
+          <p class="section-intro">A more thoughtful insurance experience starts with understanding you, explaining the options, and keeping the conversation human.</p>
+        </div>
+        <div class="why-grid">
+          <article class="why-item"><div class="why-symbol" aria-hidden="true">✳</div><span class="why-number">01 / Your priorities</span><h3>Personal service</h3><p>Room to ask questions and talk through what matters to you, at your pace.</p></article>
+          <article class="why-item"><div class="why-symbol" aria-hidden="true">◇</div><span class="why-number">02 / Clear decisions</span><h3>Thoughtful coverage</h3><p>Understand the coverage options, limits, and considerations that deserve a closer look.</p></article>
+          <article class="why-item"><div class="why-symbol" aria-hidden="true">❧</div><span class="why-number">03 / Looking ahead</span><h3>Long-term relationships</h3><p>A relationship-minded approach designed to support you as your needs change.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="founder-section" id="founder">
+      <div class="section founder-inner">
+        <div class="founder-mark" aria-hidden="true"><img src="cypress-tree.png" alt=""><span>Rooted in what matters.</span></div>
+        <div class="founder-copy">
+          <div class="section-kicker">Meet the founder</div>
+          <h2>A personal approach, from the beginning.</h2>
+          <div class="founder-byline">Emiliano Jalali <span>— Founder, Jalali Insurance Agency</span></div>
+          <p>I'm building Jalali Insurance Agency around a simple belief: insurance conversations should feel clear, thoughtful, and personal. My goal is to take the time to understand each client, explain the options in everyday language, and build relationships that last beyond the first conversation.</p>
+          <p>This is the start of our story. I'll share more about my background and the inspiration behind the agency soon.</p>
+          <a class="founder-link" href="#contact">Start a conversation <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
     <section class="process" id="process">
       <div class="section">
         <div class="section-kicker">A simple place to start</div>
         <h2>Three steps toward<br>a clearer picture.</h2>
         <div class="process-grid">
-          <article class="process-step"><div class="num">01</div><h3>Tell us about your work</h3><p>Share what your business does, what you need to protect, and what questions are on your mind.</p></article>
+          <article class="process-step"><div class="num">01</div><h3>Tell us what matters</h3><p>Share a little about yourself or your business, what you need to protect, and the questions on your mind.</p></article>
           <article class="process-step"><div class="num">02</div><h3>Review the possibilities</h3><p>Discuss relevant coverage needs, information required for quoting, and potential options available through appointed markets.</p></article>
           <article class="process-step"><div class="num">03</div><h3>Choose your next step</h3><p>Get a clearer understanding of the options and decide how you’d like to move forward. No pressure, just a considered conversation.</p></article>
         </div>
       </div>
     </section>
 
+
+    <section class="faq-section" id="faqs">
+      <div class="section faq-layout">
+        <div class="faq-heading">
+          <div class="section-kicker">Good questions, clear answers</div>
+          <h2>Frequently asked<br>questions.</h2>
+          <p>Just getting started? Here are a few things clients often want to know before reaching out.</p>
+          <a class="founder-link" href="#contact">Still have a question? <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="faq-list">
+          <details><summary>Is requesting an insurance quote free?<span class="faq-indicator" aria-hidden="true">+</span></summary><div class="faq-answer">There is no charge just to start a quote conversation with our agency. Any applicable premium, fees, or other costs would be explained separately before a purchase.</div></details>
+          <details><summary>Can you help me compare insurance options?<span class="faq-indicator" aria-hidden="true">+</span></summary><div class="faq-answer">Our goal is to help you understand available coverage options, important differences, and questions to consider. The choices available depend on your needs and our market access when the agency begins operations.</div></details>
+          <details><summary>How do I request a quote, and how long will it take?<span class="faq-indicator" aria-hidden="true">+</span></summary><div class="faq-answer">Once the agency is accepting inquiries, you can use our website form or email us with your contact information and the type of coverage you're exploring. Timing will vary based on the coverage, the details needed, and insurer response times; we'll provide an update when we can.</div></details>
+          <details><summary>What types of businesses can you help insure?<span class="faq-indicator" aria-hidden="true">+</span></summary><div class="faq-answer">We plan to focus on commercial auto, general liability, workers' compensation, and business insurance, subject to licensing, appointments, and insurer eligibility. Tell us about your operation so we can discuss what may be available.</div></details>
+          <details><summary>Can you help with personal auto insurance?<span class="faq-indicator" aria-hidden="true">+</span></summary><div class="faq-answer">Personal auto is one of the coverage categories we're preparing to explore. Options will depend on your drivers, vehicles, location, and available insurance markets.</div></details>
+          <details><summary>What's the difference between homeowners and renters insurance?<span class="faq-indicator" aria-hidden="true">+</span></summary><div class="faq-answer">Homeowners insurance typically addresses a home's structure as well as eligible personal property and liability exposures. Renters insurance generally focuses on belongings and certain liability exposures, not the building itself. Exact coverage depends on the policy.</div></details>
+          <details><summary>Can I bundle home and auto insurance?<span class="faq-indicator" aria-hidden="true">+</span></summary><div class="faq-answer">Sometimes. Certain insurers may offer multi-policy options or discounts, but availability and savings vary. We can discuss whether that approach makes sense once eligible markets are available.</div></details>
+          <details><summary>Do you serve clients throughout California?<span class="faq-indicator" aria-hidden="true">+</span></summary><div class="faq-answer">California statewide is our intended service area. Insurance services will begin after the agency's licensing and relevant market access are in place.</div></details>
+        </div>
+      </div>
+    </section>
+
     <section class="cta-band">
       <div class="cta-inner">
-        <div><div class="section-kicker">Your business deserves a thoughtful conversation</div><h2>Let’s talk about what you’re building.</h2><p>Start with a question. We’ll take it one step at a time.</p></div>
+        <div><div class="section-kicker">Your future deserves a thoughtful conversation</div><h2>Let’s talk about what matters to you.</h2><p>Start with a question. We’ll take it one step at a time.</p></div>
         <a class="button" href="#contact">Get in touch ↗</a>
       </div>
     </section>
@@ -401,26 +579,40 @@
         <div class="contact-copy">
           <div class="section-kicker">Get in touch</div>
           <h2>Let’s start with a conversation.</h2>
-          <p>Tell us a little about yourself or your business and the coverage you’re exploring. We’ll follow up once the agency’s contact details and intake process are configured.</p>
-          <div class="contact-detail"><span>✳</span><div><strong>Personal service</strong><br>Thoughtful guidance, one conversation at a time.</div></div>
-          <div class="contact-detail"><span>⌖</span><div><strong>Service area</strong><br>California — final service area to be confirmed.</div></div>
-          <div class="contact-detail"><span>✉</span><div><strong>Agency contact</strong><br>Phone and business email will be added before launch.</div></div>
+          <p>Tell us what kind of insurance you're exploring. We're preparing our intake process and will open quote requests once the agency is ready to serve clients.</p>
+          <div class="contact-detail"><span aria-hidden="true">✳</span><div><strong>Personal service</strong><br>Thoughtful guidance, one conversation at a time.</div></div>
+          <div class="contact-detail"><span aria-hidden="true">⌖</span><div><strong>Service area</strong><br>California statewide (planned)</div></div>
+          <div class="contact-detail"><span aria-hidden="true">✉</span><div><strong>Email</strong><br><a href="mailto:emi@jalali-insurance.com">emi@jalali-insurance.com</a></div></div>
+          <div class="contact-detail"><span aria-hidden="true">⌁</span><div><strong>Website</strong><br>jalali-insurance.com</div></div>
+          <p class="prelaunch-note"><strong>Agency launch in preparation.</strong> Entity licensing, carrier access, and intake are being finalized. The form is currently in demo mode and will not send your information.</p>
         </div>
-        <form class="contact-form" id="quoteForm">
+        <form class="contact-form" id="quoteForm" data-formspree-endpoint="https://formspree.io/f/xppplvzd" novalidate>
+          <div class="form-header"><div class="section-kicker">Tell us what you have in mind</div><h3>Explore your options.</h3><p>A few details help us understand where to begin.</p></div>
+          <fieldset class="insurance-choice">
+            <legend>What kind of coverage are you exploring? <span aria-hidden="true">*</span></legend>
+            <label class="choice-card"><input type="radio" name="insurance_type" value="Business insurance" id="typeBusiness"><span><strong>Business insurance</strong><small>Protecting what you build</small></span><span class="choice-check" aria-hidden="true">↗</span></label>
+            <label class="choice-card"><input type="radio" name="insurance_type" value="Personal insurance" id="typePersonal"><span><strong>Personal insurance</strong><small>Covering life beyond work</small></span><span class="choice-check" aria-hidden="true">↗</span></label>
+            <label class="choice-card"><input type="radio" name="insurance_type" value="Not sure yet" id="typeUnsure" checked><span><strong>Not sure yet</strong><small>Help me find a starting point</small></span><span class="choice-check" aria-hidden="true">↗</span></label>
+          </fieldset>
           <div class="form-grid">
-            <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required placeholder="Full name"></div>
-            <div class="field"><label for="business">Business name</label><input id="business" name="business" autocomplete="organization" placeholder="Company (if applicable)"></div>
-            <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="you@company.com"></div>
-            <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Best callback number"></div>
-            <div class="field full"><label for="coverage">What are you exploring?</label><select id="coverage" name="coverage" required><option value="">Choose a coverage type</option><optgroup label="Business insurance"><option>Commercial auto</option><option>General liability</option><option>Workers’ compensation</option><option>Business owners / property</option><option>Commercial property</option><option>Other commercial coverage</option></optgroup><optgroup label="Personal insurance"><option>Personal auto</option><option>Homeowners</option><option>Renters</option><option>Condo</option><option>Personal umbrella</option><option>Other personal coverage</option></optgroup><optgroup label="Not sure?"><option>Multiple coverages</option><option>Not sure yet</option></optgroup></select></div>
-            <div class="field full"><label for="message">A little about your needs</label><textarea id="message" name="message" placeholder="Tell us a little about what you need. Please don't include sensitive personal, financial, or claims information."></textarea></div>
+            <div class="field"><label for="name">Full name *</label><input id="name" name="name" autocomplete="name" required maxlength="100" placeholder="Your full name"></div>
+            <div class="field business-field" id="businessField" hidden><label for="business">Business name *</label><input id="business" name="business" autocomplete="organization" maxlength="120" disabled placeholder="Business or organization"></div>
+            <div class="field"><label for="email">Email address *</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="160" placeholder="you@example.com"></div>
+            <div class="field"><label for="phone">Phone number *</label><input id="phone" name="phone" type="tel" autocomplete="tel" required maxlength="30" placeholder="Best contact number"></div>
+            <div class="field full"><label for="coverage">What are you exploring? *</label><select id="coverage" name="coverage" required><option value="">Choose a coverage type</option><optgroup label="Business insurance"><option>Commercial auto</option><option>General liability</option><option>Workers’ compensation</option><option>Business owners / property</option><option>Commercial property</option><option>Other commercial coverage</option></optgroup><optgroup label="Personal insurance"><option>Personal auto</option><option>Homeowners</option><option>Renters</option><option>Condo</option><option>Personal umbrella</option><option>Other personal coverage</option></optgroup><optgroup label="Other"><option>Multiple coverages</option><option>Not sure yet</option></optgroup></select></div>
+            <div class="field full"><label for="preferredContact">Preferred way to reach you</label><select id="preferredContact" name="preferred_contact"><option value="">No preference</option><option value="Email">Email</option><option value="Phone">Phone call</option></select></div>
+            <div class="field full"><label for="message">A little about your needs (optional)</label><textarea id="message" name="message" maxlength="900" placeholder="Share a general overview. Please do not include Social Security numbers, driver’s license numbers, payments, detailed claims, or other sensitive data."></textarea></div>
           </div>
-          <p class="form-note">Website preview only: this form is not connected to an inbox and will not transmit your information. We’ll connect a secure intake method before the site goes live.</p>
-          <button class="button" type="submit">Preview request ↗</button>
-          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+          <div class="honeypot" aria-hidden="true"><label for="websiteFax">Leave this field empty</label><input type="text" name="_gotcha" id="websiteFax" autocomplete="off" tabindex="-1"></div>
+          <label class="consent-row"><input id="consent" name="acknowledgement" type="checkbox" value="Acknowledged" required><span>I understand this is an inquiry only; submitting a form does not create, bind, renew, or change coverage. I will not send sensitive information through this form. *</span></label>
+          <p class="form-note">When enabled, submissions will be handled by Formspree and forwarded to the agency's email. See our <a href="#privacy">contact information notice</a>. This website is currently in development; the form does not transmit details yet.</p>
+          <button class="button form-submit" id="formSubmit" type="submit" disabled>Quote requests opening soon ↗</button>
+          <div class="form-status" id="formStatus" role="status" aria-live="polite">Demo mode — no information is sent.</div>
         </form>
       </div>
     </section>
+
+    <section class="privacy-strip" id="privacy" aria-label="Contact information notice"><div class="section privacy-inner"><div><div class="section-kicker">Your information</div><h2>Contact information notice</h2></div><p>Once activated, this form will share the information you enter with Formspree, a third-party form processor, to deliver the inquiry to Jalali Insurance Agency. Information may also be forwarded to the agency email inbox. Please submit only basic contact details and general coverage interests. Do not send sensitive identification, medical, payment, or claims information. A final privacy notice will be reviewed before public launch.</p></div></section>
   </main>
 
   <footer>
@@ -428,29 +620,45 @@
       <div class="footer-brand">
         <a class="brand" href="#home">
           <img class="brand-mark" src="cypress-tree.png" alt="" aria-hidden="true">
-          <div><div class="brand-name">The Jalali Agency</div><div class="brand-sub">Insurance Services</div></div>
+          <div><div class="brand-name">Jalali Insurance Agency</div><div class="brand-sub">Standing tall through every season.</div></div>
         </a>
-        <div class="footer-tagline">Standing Tall Through Every Season.</div>
+        <div class="footer-tagline">Standing tall through every season.</div>
       </div>
-      <div class="footer-links"><a href="#services">Coverage</a><a href="#approach">Our approach</a><a href="#process">How it works</a><a href="#contact">Contact</a></div>
+      <div class="footer-links"><a href="#services">Business</a><a href="#personal">Personal</a><a href="#founder">Founder</a><a href="#faqs">FAQs</a><a href="#contact">Contact</a><a href="#privacy">Privacy</a></div>
     </div>
     <div class="footer-bottom">
-      <div class="disclaimer">Coverage descriptions are general information only and do not amend, extend, or replace any insurance policy. Coverage availability, terms, limits, exclusions, and eligibility vary. A quote or request does not bind coverage. Final website copy, license details, carrier relationships, disclosures, and contact information must be reviewed and confirmed before publication.</div>
-      <div>© <span id="year"></span> Jalali Insurance Services. All rights reserved.</div>
+      <div class="disclaimer">Coverage descriptions are for general educational purposes only and are not offers to sell, bind, or change insurance. Policy terms, eligibility, and availability vary. Jalali Insurance Services LLC is preparing to apply for agency licensing and arrange market access; insurance sales are not yet available through this website. Licensing, disclosures, and privacy materials must be reviewed before public launch.</div>
+      <div>© <span id="year"></span> Jalali Insurance Services LLC. All rights reserved.</div>
     </div>
   </footer>
   <script>
+    // PRE-LAUNCH SAFETY SWITCH: leave false until the business is licensed,
+    // the site's privacy/disclosures are reviewed, and a test submission is verified.
+    // To test with dummy data on the developmental branch ONLY, temporarily set true,
+    // submit a clearly labeled TEST request, then set false again.
+    const FORM_SUBMISSIONS_ENABLED = false;
+
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
-    menuToggle.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
+    const mobileQuery = window.matchMedia('(max-width: 1000px)');
+    function setMenu(open) {
+      const shouldOpen = Boolean(open && mobileQuery.matches);
+      navLinks.classList.toggle('open', shouldOpen);
+      menuToggle.classList.toggle('is-open', shouldOpen);
+      menuToggle.setAttribute('aria-expanded', String(shouldOpen));
+      menuToggle.setAttribute('aria-label', shouldOpen ? 'Close menu' : 'Open menu');
+      mobileNavBackdrop.hidden = !shouldOpen;
+    }
+    menuToggle.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+    mobileNavBackdrop.addEventListener('click', () => setMenu(false));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && navLinks.classList.contains('open')) { setMenu(false); menuToggle.focus(); }
     });
-    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    }));
+    mobileQuery.addEventListener('change', () => setMenu(false));
 
+    // Expandable commercial and personal coverage: preserved from V2.
     const coverageDetails = {
       'Commercial auto': ['Commercial Auto', 'Explore insurance for vehicles used for business purposes, whether you operate a single work vehicle or a fleet.', ['Business-use vehicles and driver considerations', 'Liability and physical damage options', 'Vehicle use, operations, and eligibility review']],
       'General liability': ['General Liability', 'Explore protection for certain claims involving third-party injuries, property damage, and related liability exposures.', ['Premises and operations considerations', 'Certain bodily injury and property damage claims', 'Contractual and industry-specific requirements']],
@@ -460,42 +668,115 @@
       'Homeowners': ['Homeowners Insurance', 'Explore insurance options for your home, belongings, and certain personal liability exposures.', ['Dwelling and personal property considerations', 'Personal liability options', 'Deductibles and coverage limits']],
       'Renters': ['Renters Insurance', 'Explore options for belongings and certain liability exposures when renting your home.', ['Personal belongings coverage', 'Personal liability considerations', 'Loss-of-use options where available']]
     };
-    const panel = document.getElementById('coveragePanel');
+    const panels = {
+      commercial: {root: document.getElementById('coveragePanel'), title: document.getElementById('panelTitle'), desc: document.getElementById('panelDescription'), list: document.getElementById('panelPoints'), quote: document.getElementById('panelQuote')},
+      personal: {root: document.getElementById('personalCoveragePanel'), title: document.getElementById('personalPanelTitle'), desc: document.getElementById('personalPanelDescription'), list: document.getElementById('personalPanelPoints'), quote: document.getElementById('personalPanelQuote')}
+    };
     const cardButtons = document.querySelectorAll('.card-trigger');
     const coverageSelect = document.getElementById('coverage');
-    function closePanel() {
-      panel.hidden = true;
-      cardButtons.forEach(button => {button.setAttribute('aria-expanded','false'); button.closest('.service-card').classList.remove('is-active');});
+    const insuranceRadios = document.querySelectorAll('input[name="insurance_type"]');
+    const businessField = document.getElementById('businessField');
+    const businessInput = document.getElementById('business');
+    const coverageOptions = {
+      'Business insurance': ['Commercial auto', 'General liability', 'Workers’ compensation', 'Business owners / property', 'Commercial property', 'Other commercial coverage', 'Multiple coverages', 'Not sure yet'],
+      'Personal insurance': ['Personal auto', 'Homeowners', 'Renters', 'Condo', 'Personal umbrella', 'Other personal coverage', 'Multiple coverages', 'Not sure yet'],
+      'Not sure yet': ['Commercial auto', 'General liability', 'Workers’ compensation', 'Business owners / property', 'Commercial property', 'Other commercial coverage', 'Personal auto', 'Homeowners', 'Renters', 'Condo', 'Personal umbrella', 'Other personal coverage', 'Multiple coverages', 'Not sure yet']
+    };
+    function selectedInsuranceType() { return document.querySelector('input[name="insurance_type"]:checked').value; }
+    function updateInsuranceFields(desiredCoverage = '') {
+      const type = selectedInsuranceType();
+      const showBusiness = type === 'Business insurance';
+      businessField.hidden = !showBusiness;
+      businessInput.disabled = !showBusiness;
+      businessInput.required = showBusiness;
+      const previous = desiredCoverage || coverageSelect.value;
+      coverageSelect.replaceChildren(new Option('Choose a coverage type', ''));
+      for (const value of coverageOptions[type]) coverageSelect.add(new Option(value, value));
+      coverageSelect.value = coverageOptions[type].includes(previous) ? previous : '';
+    }
+    insuranceRadios.forEach(radio => radio.addEventListener('change', () => updateInsuranceFields()));
+    updateInsuranceFields();
+    function closePanels() {
+      Object.values(panels).forEach(item => { item.root.hidden = true; });
+      cardButtons.forEach(button => {
+        button.setAttribute('aria-expanded', 'false');
+        button.closest('.service-card').classList.remove('is-active');
+      });
     }
     cardButtons.forEach(button => button.addEventListener('click', () => {
       const key = button.dataset.coverage;
-      const alreadyOpen = !panel.hidden && button.getAttribute('aria-expanded') === 'true';
-      closePanel();
+      const alreadyOpen = button.getAttribute('aria-expanded') === 'true';
+      const isPersonal = button.closest('.personal-grid') !== null;
+      const item = panels[isPersonal ? 'personal' : 'commercial'];
+      closePanels();
       if (alreadyOpen) return;
       const [title, description, points] = coverageDetails[key];
-      document.getElementById('panelTitle').textContent = title;
-      document.getElementById('panelDescription').textContent = description;
-      const list = document.getElementById('panelPoints');
-      list.replaceChildren();
-      points.forEach(point => { const li = document.createElement('li'); li.textContent = point; list.appendChild(li); });
-      document.getElementById('panelQuote').dataset.coverage = key;
-      panel.hidden = false;
-      button.setAttribute('aria-expanded','true');
+      item.title.textContent = title;
+      item.desc.textContent = description;
+      item.list.replaceChildren();
+      points.forEach(point => { const li = document.createElement('li'); li.textContent = point; item.list.appendChild(li); });
+      item.quote.dataset.coverage = key;
+      item.root.hidden = false;
+      button.setAttribute('aria-expanded', 'true');
       button.closest('.service-card').classList.add('is-active');
-      // The panel sits directly below commercial cards; scroll to it for personal cards.
-      if (button.closest('.personal-grid')) panel.scrollIntoView({behavior:'smooth',block:'center'});
+      if (isPersonal) item.root.scrollIntoView({behavior:'smooth',block:'nearest'});
     }));
-    document.getElementById('closeCoverage').addEventListener('click', closePanel);
-    document.getElementById('panelQuote').addEventListener('click', event => {
+    document.getElementById('closeCoverage').addEventListener('click', closePanels);
+    document.getElementById('closePersonalCoverage').addEventListener('click', closePanels);
+    Object.values(panels).forEach(item => item.quote.addEventListener('click', event => {
       const key = event.currentTarget.dataset.coverage;
-      coverageSelect.value = key;
-      closePanel();
+      document.getElementById(key === 'Personal auto' || key === 'Homeowners' || key === 'Renters' ? 'typePersonal' : 'typeBusiness').checked = true;
+      updateInsuranceFields(key);
+      closePanels();
+    }));
+
+    // Native details elements provide built-in keyboard and screen-reader support.
+    document.querySelectorAll('.faq-list details').forEach(detail => {
+      detail.addEventListener('toggle', () => {
+        if (detail.open) document.querySelectorAll('.faq-list details').forEach(other => { if (other !== detail) other.open = false; });
+      });
     });
 
     document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('quoteForm').addEventListener('submit', event => {
+    const form = document.getElementById('quoteForm');
+    const formSubmit = document.getElementById('formSubmit');
+    const formStatus = document.getElementById('formStatus');
+    if (FORM_SUBMISSIONS_ENABLED) {
+      form.action = form.dataset.formspreeEndpoint;
+      form.method = 'POST';
+      formSubmit.disabled = false;
+      formSubmit.textContent = 'Send my inquiry ↗';
+      document.querySelector('.prelaunch-note').hidden = true;
+      const formNote = form.querySelector('.form-note');
+      formNote.textContent = 'Submitting does not bind insurance coverage. Do not include sensitive personal or financial information. Your submission will be processed by Formspree and sent to our business inbox.';
+      formStatus.textContent = '';
+    }
+    form.addEventListener('submit', async event => {
       event.preventDefault();
-      document.getElementById('formStatus').textContent = 'Preview only — your details have not been sent or stored. We’ll connect this form before launch.';
+      formStatus.classList.remove('is-error', 'is-success');
+      if (!FORM_SUBMISSIONS_ENABLED) { formStatus.textContent = 'The form is in demo mode and does not send information yet.'; return; }
+      if (!form.reportValidity()) return;
+      formSubmit.disabled = true;
+      formSubmit.textContent = 'Sending…';
+      formStatus.textContent = 'Sending your inquiry…';
+      try {
+        const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+        if (!response.ok) {
+          const data = await response.json().catch(() => ({}));
+          const message = Array.isArray(data.errors) ? data.errors.map(e => e.message).filter(Boolean).join(' ') : '';
+          throw new Error(message || 'We could not send your request. Please try again or email us.');
+        }
+        form.reset();
+        updateInsuranceFields();
+        formStatus.classList.add('is-success');
+        formStatus.textContent = 'Thank you — your message was received. A submission does not bind or change coverage.';
+      } catch (err) {
+        formStatus.classList.add('is-error');
+        formStatus.textContent = err.message || 'Something went wrong. Please contact us by email.';
+      } finally {
+        formSubmit.disabled = false;
+        formSubmit.textContent = 'Send my inquiry ↗';
+      }
     });
   </script>
 </body>
